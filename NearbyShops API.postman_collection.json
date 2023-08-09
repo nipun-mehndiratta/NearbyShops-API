@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "0c2e486b-c687-41ff-83f7-95aece35f6f0",
+		"name": "NearbyShops API",
+		"description": "API collection for testing NearbyShops application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28417152"
+	},
+	"item": [
+		{
+			"name": "Shop Owners",
+			"item": [
+				{
+					"name": "Register Shop Owner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"shopowner1\",\n  \"password\": \"password1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/shopowners/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"shopowners",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Shop Owner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"shopowner1\",\n  \"password\": \"password1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/shopowners/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"shopowners",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shops",
+			"item": [
+				{
+					"name": "Create Shop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"shopImage\": \"image-link\",\n  \"shopName\": \"Shop A\",\n  \"shopDescritption\": \"Clothing Shop\",\n  \"shopCategory\": \"Clothing\",\n  \"ownerName\": \"Nipun\",\n  \"contacts\": \"1234567890\",\n  \"address\": {\n    \"lat\": 40.712776,\n    \"long\": -74.005974\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/createShop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"createShop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Shop",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"shopImage\": \" edited image-link\",\n  \"shopName\": \"Shop A\",\n  \"shopDescritption\": \"Grocery Shop\",\n  \"shopCategory\": \"Grocery\",\n  \"ownerName\": \"Nipun\",\n  \"contacts\": \"1234567890\",\n  \"address\": {\n    \"lat\": 40.712776,\n    \"long\": -74.005974\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/editShop/<shop_id>",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"editShop",
+								"<shop_id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Shop",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/deleteShop/<shop_id>",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"deleteShop",
+								"<shop_id>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"user1\",\n  \"password\": \"userpassword1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"user1\",\n  \"password\": \"userpassword1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Shops by Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/shops/search/Clothing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"shops",
+								"search",
+								"Clothing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Nearby Shops",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/shops?lat=40.712776&long=-74.005974",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"shops"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "40.712776"
+								},
+								{
+									"key": "long",
+									"value": "-74.005974"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
